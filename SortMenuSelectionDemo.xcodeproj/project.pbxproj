@@ -16,6 +16,7 @@
 		C34C39E42503F270006C9D15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C34C39E22503F270006C9D15 /* LaunchScreen.storyboard */; };
 		C34C39EF2503F270006C9D15 /* SortMenuSelectionDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34C39EE2503F270006C9D15 /* SortMenuSelectionDemoTests.swift */; };
 		C34C39FA2503F270006C9D15 /* SortMenuSelectionDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34C39F92503F270006C9D15 /* SortMenuSelectionDemoUITests.swift */; };
+		C34C3A082503F785006C9D15 /* SortMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34C3A072503F785006C9D15 /* SortMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		C34C39F52503F270006C9D15 /* SortMenuSelectionDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SortMenuSelectionDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34C39F92503F270006C9D15 /* SortMenuSelectionDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMenuSelectionDemoUITests.swift; sourceTree = "<group>"; };
 		C34C39FB2503F270006C9D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C34C3A072503F785006C9D15 /* SortMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				C34C39E22503F270006C9D15 /* LaunchScreen.storyboard */,
 				C34C39E52503F270006C9D15 /* Info.plist */,
 				C34C39DD2503F26E006C9D15 /* SortMenuSelectionDemo.xcdatamodeld */,
+				C34C3A072503F785006C9D15 /* SortMenuViewController.swift */,
 			);
 			path = SortMenuSelectionDemo;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C34C3A082503F785006C9D15 /* SortMenuViewController.swift in Sources */,
 				C34C39D92503F26E006C9D15 /* ViewController.swift in Sources */,
 				C34C39D52503F26E006C9D15 /* AppDelegate.swift in Sources */,
 				C34C39DF2503F26E006C9D15 /* SortMenuSelectionDemo.xcdatamodeld in Sources */,
