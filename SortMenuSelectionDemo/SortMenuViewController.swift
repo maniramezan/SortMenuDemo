@@ -10,43 +10,40 @@ import UIKit
 
 class SortMenuViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    var selectedSortOption: String?
-    var sortOptionSelected: ((String) -> Void)?
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource?.count ?? 0
+    var selectedSortOption: String? = nil
+    var sortOptionSelected: ((String?) -> Void)? = nil
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var sortOptions: [String] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.allowsSelection = true
+        
+        // Do any additional setup after loading the view.
     }
     
-    
-    @IBOutlet weak var tableVie: UITableView!
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sortOptions.count
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sortcell", for: indexPath)
-        cell.textLabel?.text = dataSource?[indexPath.row]
+        cell.textLabel?.text = sortOptions[indexPath.row]
+        cell.accessoryType = (selectedSortOption ?? "") == sortOptions[indexPath.row] ? .checkmark : .none
         return cell
-    }
-    
-    
-    var dataSource:[String]?
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableVie.allowsSelection = true
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        sortOptionSelected?((dataSource?[indexPath.row])!)
-    }
-
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.accessoryType = .none
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-         if cell.textLabel?.text == selectedSortOption  {
-            cell.setSelected(true, animated: false)
-            cell.accessoryType = .checkmark
-            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)  // required, as noted below
+        if
+            let selectedSortOption = selectedSortOption,
+            let lastSelectedSortOptionIndex = sortOptions.firstIndex(of: selectedSortOption)
+        {
+            tableView.cellForRow(at: IndexPath(row: lastSelectedSortOptionIndex, section: 0))?.accessoryType = .none
         }
+        selectedSortOption = sortOptions[indexPath.row]
+        sortOptionSelected?(selectedSortOption)
     }
 }
